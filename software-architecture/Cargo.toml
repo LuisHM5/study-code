@@ -1,0 +1,34 @@
+# Workspace de los ejemplos en Rust: comparte dependencias y la carpeta target/.
+[workspace]
+resolver = "2"
+members = [
+    "01-transaction-script/rust",
+    "02-layered/rust",
+    "03-feature-modules/rust",
+    "04-vertical-slice/rust",
+    "05-screaming/rust",
+    "06-hexagonal/rust",
+    "07-onion/rust",
+    "08-clean/rust",
+    "09-modular-monolith/rust",
+    "10-cqrs/rust",
+    "11-event-driven-event-sourcing/rust",
+    "12-microservices/rust/policies",
+    "12-microservices/rust/notifications",
+]
+
+[workspace.package]
+version = "0.1.0"
+edition = "2021"
+publish = false
+
+[workspace.dependencies]
+axum = "0.8"
+tokio = { version = "1", features = ["macros", "rt-multi-thread", "net", "sync"] }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+uuid = { version = "1", features = ["v4", "serde"] }
+chrono = { version = "0.4", default-features = false, features = ["serde", "clock"] }
+thiserror = "2"
+async-trait = "0.1"
+reqwest = { version = "0.12", default-features = false, features = ["json", "rustls-tls"] }

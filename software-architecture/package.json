@@ -1,0 +1,9 @@
+{
+  "name": "software-architecture",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Ejemplos NestJS de cada arquitectura (workspace pnpm)",
+  "scripts": {
+    "build": "pnpm -r build"
+  }
+}
